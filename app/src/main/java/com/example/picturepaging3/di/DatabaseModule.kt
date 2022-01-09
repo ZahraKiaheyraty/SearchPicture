@@ -2,7 +2,7 @@ package com.example.picturepaging3.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.picturepaging3.local.UnsplashDatabase
+import com.example.picturepaging3.data.local.UnsplashDatabase
 import com.example.picturepaging3.util.Constants.UNSPLASH_DATABASE
 import dagger.Module
 import dagger.Provides

@@ -1,9 +1,9 @@
-package com.example.picturepaging3.local
+package com.example.picturepaging3.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.picturepaging3.local.dao.UnsplashImageDao
-import com.example.picturepaging3.local.dao.UnsplashRemoteKeysDao
+import com.example.picturepaging3.data.local.dao.UnsplashImageDao
+import com.example.picturepaging3.data.local.dao.UnsplashRemoteKeysDao
 import com.example.picturepaging3.model.UnsplashImage
 import com.example.picturepaging3.model.UnsplashRemoteKeys
 
