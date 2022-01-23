@@ -1,13 +1,14 @@
 package com.example.picturepaging3.data.remote
 
-import android.app.appsearch.SearchResult
 import com.example.picturepaging3.BuildConfig
+import com.example.picturepaging3.model.SearchResult
 import com.example.picturepaging3.model.UnsplashImage
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface UnsplashApi {
+
     @Headers("Authorization: Client-ID ${BuildConfig.API_KEY}")
     @GET("/photos")
     suspend fun getAllImages(

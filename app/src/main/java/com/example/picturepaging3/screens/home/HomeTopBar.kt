@@ -30,11 +30,3 @@ fun HomeTopBar(
         }
     )
 }
-
-@Composable
-@Preview
-fun HomeTopBarPreview() {
-    HomeTopBar {
-
-    }
-}

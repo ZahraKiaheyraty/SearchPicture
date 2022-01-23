@@ -24,7 +24,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
 import coil.annotation.ExperimentalCoilApi
@@ -71,7 +71,7 @@ fun UnsplashItem(unsplashImage: UnsplashImage) {
                     Intent.ACTION_VIEW,
                     Uri.parse("https://unsplash.com/@${unsplashImage.user.username}?utm_source=DemoApp&utm_medium=referral")
                 )
-                ContextCompat.startActivity(context, browserIntent, null)
+                startActivity(context, browserIntent, null)
             }
             .height(300.dp)
             .fillMaxWidth(),
@@ -146,18 +146,4 @@ fun LikeCounter(
             overflow = TextOverflow.Ellipsis
         )
     }
-}
-
-@ExperimentalCoilApi
-@Composable
-@Preview
-fun UnsplashImagePreview() {
-    UnsplashItem(
-        unsplashImage = UnsplashImage(
-            id = "1",
-            urls = Urls(regular = ""),
-            likes = 100,
-            user = User(username = "Stevdza-San", userLinks = UserLinks(html = ""))
-        )
-    )
 }
