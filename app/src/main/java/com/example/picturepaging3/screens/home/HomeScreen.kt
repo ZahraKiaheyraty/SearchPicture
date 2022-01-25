@@ -18,7 +18,6 @@ fun HomeScreen(
     homeViewModel: HomeViewModel = hiltViewModel()
 ) {
     val getAllImages = homeViewModel.getAllImages.collectAsLazyPagingItems()
-
     Scaffold(
         topBar = {
             HomeTopBar(

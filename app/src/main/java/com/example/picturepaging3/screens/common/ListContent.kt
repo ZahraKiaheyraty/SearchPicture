@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -22,18 +23,18 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.picturepaging3.model.UnsplashImage
 import com.example.picturepaging3.R
-import com.example.picturepaging3.model.Urls
-import com.example.picturepaging3.model.User
-import com.example.picturepaging3.model.UserLinks
 
 @ExperimentalCoilApi
 @Composable
@@ -144,6 +145,23 @@ fun LikeCounter(
             fontWeight = FontWeight.Bold,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis
+        )
+    }
+}
+@Composable
+fun Loader(anim:Int) {
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(anim))
+    val progress by animateLottieCompositionAsState(composition)
+    Column(
+        modifier = Modifier
+            .width(300.dp)
+            .height(300.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        LottieAnimation(
+            composition,
+            progress,
         )
     }
 }

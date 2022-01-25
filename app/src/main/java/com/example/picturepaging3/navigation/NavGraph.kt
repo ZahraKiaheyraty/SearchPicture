@@ -8,6 +8,7 @@ import androidx.paging.ExperimentalPagingApi
 import coil.annotation.ExperimentalCoilApi
 import com.example.picturepaging3.screens.home.HomeScreen
 import com.example.picturepaging3.screens.search.SearchScreen
+import com.example.picturepaging3.screens.intro.IntroScreen
 
 @ExperimentalCoilApi
 @ExperimentalPagingApi
@@ -15,8 +16,11 @@ import com.example.picturepaging3.screens.search.SearchScreen
 fun SetupNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = Screen.Home.route
+        startDestination = Screen.Intro.route
     ) {
+        composable(route = Screen.Intro.route) {
+            IntroScreen(navController = navController)
+        }
         composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)
         }
