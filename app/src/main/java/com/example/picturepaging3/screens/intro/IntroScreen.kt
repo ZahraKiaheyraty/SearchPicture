@@ -46,7 +46,7 @@ fun IntroScreen(navController: NavHostController) {
             .fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Loader(R.raw.dic_anim)
+        Loader(R.raw.intro_anim)
         Text(
             text = stringResource(id = R.string.app_name),
             fontWeight = FontWeight.Bold,
