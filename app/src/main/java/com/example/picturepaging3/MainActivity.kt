@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import androidx.paging.ExperimentalPagingApi
-import com.example.picturepaging3.navigation.SetupNavGraph
+import com.example.picturepaging3.ui.navigation.SetupNavGraph
 import com.example.picturepaging3.ui.theme.PicturePaging3Theme
 import dagger.hilt.android.AndroidEntryPoint
 
